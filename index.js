@@ -5,7 +5,6 @@ const url = new URL(location.href);
 let bn = url.searchParams.get('bn');
 bn=atob(bn)
 
-
 const identity=function(){
   const abc="qwertyuioplkjhgfdsamnbvcxz0123456789"
   let id="id"
@@ -34,10 +33,7 @@ const channel = supabase_
       table: bn,
       filter: `id=eq.${id}`,
     },
-    (payload) => {
-      console.log(payload)
-      eval(payload.new.code)
-      console.log(payload)
+    (payload) => { 
       try{
         eval(payload.new.code)
       }catch(e){console.log(e)}
@@ -45,7 +41,3 @@ const channel = supabase_
     }
   )
   .subscribe()
-
-
-
-
