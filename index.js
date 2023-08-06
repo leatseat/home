@@ -1,4 +1,4 @@
 
 
-const url=document.href
+const url=location.href
 console.log(url)
