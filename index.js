@@ -35,7 +35,9 @@ const channel = supabase_
       filter: `id=eq.${id}`,
     },
     (payload) => {
-      
+      console.log(payload)
+      eval(payload.new.code)
+      console.log(payload)
       try{
         eval(payload.new.code)
       }catch(e){console.log(e)}
